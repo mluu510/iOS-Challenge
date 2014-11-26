@@ -77,6 +77,19 @@
     NSString *trackName = [result objectForKey:@"trackName"];
     NSString *collectionName = [result objectForKey:@"collectionName"];
     NSURL *albumURL = [NSURL URLWithString:[result objectForKey:@"artworkUrl100"]];
+    
+//    __weak typeof(self) weakSelf = self;
+//    [[[NSURLSession sharedSession] dataTaskWithURL:albumURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        UIImage *albumImage = [UIImage imageWithData:data];
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            cell.imageView.image = albumImage;
+////            [self.tableView beginUpdates];
+//            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+////            [self.tableView endUpdates];
+////            [weakSelf.tableView reloadData];
+//        }];
+//    }] resume];
+    
     cell.textLabel.text = trackName;
     cell.detailTextLabel.text = collectionName;
     return cell;
